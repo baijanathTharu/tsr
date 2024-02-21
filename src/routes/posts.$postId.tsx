@@ -1,0 +1,25 @@
+import { Link, createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/posts/$postId")({
+  component: Post,
+});
+
+function Post() {
+  const { postId } = Route.useParams();
+  return (
+    <div>
+      Hello /posts/$postId!
+      <div>
+        Post Id: {postId}
+        <Link
+          to="/posts/$postId/edit"
+          params={{
+            postId,
+          }}
+        >
+          Edit
+        </Link>
+      </div>
+    </div>
+  );
+}
