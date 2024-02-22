@@ -7,6 +7,8 @@ import {
 } from "@tanstack/react-router";
 import React, { Suspense } from "react";
 
+import "../global.css";
+
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
     ? () => null // Render nothing in production

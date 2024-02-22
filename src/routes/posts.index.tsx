@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { postsQueryOptions } from "../data/posts";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/posts/")({
   component: () => <Posts />,
@@ -22,6 +23,7 @@ function Posts() {
             <Link params={{ postId: post.id.toString() }} to="/posts/$postId">
               {post.title}
             </Link>
+            <Button>Click me</Button>
           </li>
         ))}
       </ul>
